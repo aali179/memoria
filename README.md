@@ -19,8 +19,8 @@ A virtual multi-media scrapbook creator for treasured memories. Add images, song
 - Share images to social media
 
 ## 🛠 Tools
-- **Client-end:** HTML, CSS/SASS, 
+- **Client-side:** HTML, CSS/SASS, React
 - **Server-side:** Gin (Go)
 - **Database:** MongoDB
 - **Internal API:** GraphQL
-- **External APIs:** Google Maps API, Spotify, Adobe
+- **External APIs:** Google Maps, Spotify, Adobe
