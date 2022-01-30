@@ -1,0 +1,15 @@
+.button {
+    border-radius: 15px;
+    background-color: #E26D5A;
+    padding: 15px;
+}
+
+@font-face {
+    font-family: 'Augify';
+    src: url('/designSystem/fonts/Augify.otf');
+}
+
+body {
+    margin: 0;
+    background-color: #DBBEA1;
+}

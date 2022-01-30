@@ -1,0 +1,45 @@
+#background {
+    width: 100%;
+    height: 100vh;
+    margin: 0px;
+}
+
+#bookCover {
+    border-left: 25px solid #1F345B;
+    border-right: 25px solid #1F345B;
+    box-shadow: 8px 8px 10px #07070765;
+    border-radius: 45px;
+    margin: auto;
+    margin-top: 7%;
+    width: 60%;
+    background-color: #EDDFD0;
+    height: 60%;
+    display: flex;
+}
+
+#bookLeft {
+    border-right: 2px solid #1F345B;
+    box-shadow: 2px 2px 5px #07070765;
+    width: 50%;
+    padding: 5% 0% 0% 5%;
+}
+
+#bookRight {
+    border-left: 2px solid #1F345B 3px;
+    width: 50%;
+    padding: 5% 0% 0% 5%;
+}
+
+.header {
+    font-family: 'Augify';
+}
+
+#title {
+    font-size: 4rem;
+    margin: 0px;
+}
+
+#subtitle {
+    font-size: 1rem;
+    margin: 0px;
+}
