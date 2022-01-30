@@ -14,7 +14,7 @@
     margin-top: 7%;
     width: 60%;
     background-color: #EDDFD0;
-    height: 60%;
+    height: 65%;
     display: flex;
 }
 
@@ -58,8 +58,8 @@
 
 #playIcon {
     position: absolute;
-    top: 40px;
-    margin-left: 12%;
+    top: 25%;
+    margin-left: 18%;
 }
 
 .text {
