@@ -18,16 +18,15 @@
 }
 
 #bookLeft {
-    border-right: 2px solid #1F345B;
-    box-shadow: 2px 2px 5px #07070765;
-    width: 50%;
+    width: 35%;
     padding: 10% 0% 0% 5%;
     display: flex;
     flex-direction: column;
 }
 
 #bookRight {
-    border-left: 2px solid #1F345B 3px;
+    border-left: 2px solid #1F345B;
+    box-shadow: -2px 0 5px #07070765;
     width: 50%;
     padding: 5% 0% 0% 5%;
 }
@@ -65,4 +64,13 @@
 .text {
     font-family: 'Raleway', sans-serif;
     margin: 0px;
+}
+
+#bookmark {
+    width: 10%;
+    height: 80%;
+    background-color: #E26D5A;
+    box-shadow: -2px 0 5px #07070765;
+    margin-top: -5%;
+    margin-right: 5%;
 }
