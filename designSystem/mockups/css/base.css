@@ -9,6 +9,13 @@
     font-size: 1rem;
 }
 
+.card {
+    background-color: #1F345B;
+    border-radius: 10px;
+    width: 40%;
+    height: 60%;
+}
+
 @font-face {
     font-family: 'Augify';
     src: url('/designSystem/fonts/Augify.otf');
