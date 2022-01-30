@@ -1,0 +1,20 @@
+.button {
+    border-radius: 10px;
+    background-color: #E26D5A;
+    padding: 5% 10% 5% 10%;
+    color: white;
+    box-shadow: -2px 0 5px #07070765;
+    border: none;
+    font-family: Raleway;
+    font-size: 1rem;
+}
+
+@font-face {
+    font-family: 'Augify';
+    src: url('/designSystem/fonts/Augify.otf');
+}
+
+body {
+    margin: 0;
+    background-color: #DBBEA1;
+}
