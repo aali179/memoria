@@ -11,14 +11,37 @@
     color: white;
 }
 
+.formContainer {
+    width: 80%;
+}
+
 .form {
     display: flex;
     flex-direction: column;
-    margin: 10%;
+    padding: 0% 10% 10% 3%;
 }
 
 .label {
     color: white;
     font-family: Raleway;
-    font-size: 1rem;
+    font-size: 1.3rem;
+    margin-bottom: 1%;
+}
+
+.formInput {
+    display: flex;
+    flex-direction: column;
+    margin: 3% 0%;
+}
+
+.textbox {
+    background-color: #EDDFD0;
+    padding: 2%;
+    border-radius: 4px;
+    border: none;
+}
+
+.submit {
+    margin: 5%;
+    text-align: center;
 }

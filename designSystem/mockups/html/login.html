@@ -15,16 +15,23 @@
     <div id="background">
         <div class="card">
             <h2 class="title">Login</h2>
+            <div class="formContainer">
+                <form method="post">
+                    <div class="form">
+                        <div class="formInput">
+                            <label class="label" for="email">email</label>
+                            <input class="textbox" id="email" name="email" type="text" />
+                        </div>
+                        <div class="formInput">
+                            <label class="label" for="password">password</label>
+                            <input class="textbox" id="password" name="password" type="password" />
+                        </div>
+                        <div class="submit">
+                            <input type="submit" class="button" value="login">
+                        </div>
+                    </div>
+                </form>
 
-            <form method="post">
-                <div class="form">
-                    <label class="label" for="email">email</label>
-                    <input id="email" name="email" type="text" />
-                    <label class="label" for="password">password</label>
-                    <input id="password" name="password" type="password" />
-                    <input type="submit" class="button" value="login">
-            </form>
             </div>
         </div>
-    </div>
 </body>
