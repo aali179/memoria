@@ -1,0 +1,56 @@
+#background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.title {
+    font-family: Raleway;
+    font-size: 2.5rem;
+    color: #FCF2E8;
+}
+
+.formContainer {
+    width: 80%;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 0% 10% 10% 3%;
+}
+
+.label {
+    color: #FCF2E8;
+    font-family: Raleway;
+    font-size: 1.3rem;
+    margin-bottom: 1%;
+}
+
+.formInput {
+    display: flex;
+    flex-direction: column;
+    margin: 3% 0%;
+    width: 100%;
+}
+
+.textbox {
+    background-color: #EDDFD0;
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+}
+
+.submit {
+    margin: 5%;
+    text-align: center;
+}
+
+#nameInput {
+    display: flex;
+}
+
+#firstName {
+    margin-right: 5%;
+}

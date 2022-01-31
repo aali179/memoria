@@ -1,12 +1,21 @@
 .button {
     border-radius: 10px;
     background-color: #E26D5A;
-    padding: 5% 10% 5% 10%;
+    padding: 15px 30px;
     color: white;
     box-shadow: -2px 0 5px #07070765;
     border: none;
     font-family: Raleway;
-    font-size: 1rem;
+    font-size: 1.2rem;
+}
+
+.card {
+    background-color: #1F345B;
+    border-radius: 10px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 @font-face {
