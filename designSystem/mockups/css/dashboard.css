@@ -5,7 +5,7 @@
     overflow: hidden;
 }
 .tab button{
-    border-radius: 30px 30px 0px 0px;
+    border-radius: 10px 10px 0px 0px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1), 0px 0px 20px rgba(255, 158, 142, 0.4);
     border: none;
     font-family: 'Raleway', sans-serif;
@@ -13,24 +13,24 @@
     color: #1F345B;
     height: 100px;
     width: auto;
-    padding: 0% 2% 2% 2%;
+    padding: 0% 2% 3% 2%;
 }
 .tab button.active-tab{
     background-color: #DBBEA1;
 }
 .inactive-tab{
-    background-color: aliceblue;
+    background-color: #E5E5E5;
 }
 .tabcontent{
     position: absolute;
     width: 80%;
     height: 50%;
     background-color: #DBBEA1;
-    border-radius: 0px 30px 30px 30px;
+    border-radius: 0px 10px 10px 10px;
     z-index: 1000;
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
     padding: 30px;
-    margin-top: -40px;
+    margin-top: -50px;
 }
 .tab-item{
 
