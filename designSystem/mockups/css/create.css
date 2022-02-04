@@ -1,10 +1,20 @@
+.tabcontent{
+    position: absolute;
+    width: 80%;
+    height: 500px;
+    background-color: #DBBEA1;
+    border-radius: 0px 10px 10px 10px;
+    z-index: 1000;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05);
+    margin-top: -50px;
+}
+
 .creator-bar {
     float: left;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
     width:200px;
     padding: 0px;
-    height: 300px;
+    height: auto;
+    position: relative;
 }
 
 .creator-bar button {
@@ -18,5 +28,52 @@
     font-size: 20px;
     width: 220px;
     height:50px;
+    text-align: center;
+    position: relative;
+    z-index: 1000;
+}
+
+.block {
+    background-color: #E5E5E5;
+    height: 200px;
+    width: 220px;
+    margin-top: -40px;
+}
+
+.music-search .search-box {
+    background-color: #E5E5E5;
+    border-color: #1F345B;
+    border-radius: 10px;
+    border-width: 1px;
+    height: 30px;
+    width: 180px;
+    color: #1F345B;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    padding: 2% 5% 2% 5%;
+    position: relative;
+    top: 50px;
+    left: 10px;
+}
+.music-search .search-button{
+
+}
+
+#canvas {
+    background-color: #1F345B;
+    width: 100%;
+    height: 600px;
+    border-radius: 10px;
+}
+
+#top-bar {
+    background-color: #DBBEA1;
+    border-radius: 10px;
+    height: 50px;
+    color: #1F345B;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    padding: 10px 0px 0px 0px;
+    font-weight: lighter;
     text-align: center;
 }

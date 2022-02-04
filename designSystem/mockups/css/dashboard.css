@@ -25,17 +25,24 @@ body {
 .inactive-tab{
     background-color: #E5E5E5;
 }
-.tabcontent{
+.book-content, .create-content{
     position: absolute;
-    width: 80%;
-    height: 50%;
     background-color: #DBBEA1;
     border-radius: 0px 10px 10px 10px;
     z-index: 1000;
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05);
-    padding: 30px;
     margin-top: -50px;
 }
+.book-content{
+    width: 80%;
+    height: 500px;
+    padding: 30px;
+}
+.create-content {
+    width: 80%;
+    height: auto;
+}
+
 .tab-item{
 
 }
