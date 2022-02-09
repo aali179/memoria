@@ -1,6 +1,6 @@
 # 🕰️ Memoria
 
-A virtual multi-media scrapbook creator for treasured memories. Add images, songs, electronic receipts and more!
+A virtual multi-media scrapbook generator for treasured memories. Add images, songs, maps and more!
 
 ## 🤩 Team Members 
 
@@ -10,13 +10,13 @@ A virtual multi-media scrapbook creator for treasured memories. Add images, song
 |Afrah Ali             |        300049798                     |
 
 ## 🖌️ Features
-- Word editor, allowing journal entries 
-- Pin locations (using google maps)
-- Generate image collages (user arrangement)
-- Save collage as an image 
+- Provides a collection of pre-designed scrapbook templates users can choose to use
+- Upload and resize images
+- Stylize text to add to the scrapbook
 - Attach songs/playlists (Spotify)
-- Flippable pages
-- Share images to social media
+- Pin locations (using google maps)
+- Generates image collages and saves to user's scrapbook
+- User account creation and management (DB)
 
 ## 🛠 Tools
 - **Client-side:** HTML, CSS/SASS, React
