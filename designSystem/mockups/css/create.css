@@ -113,6 +113,7 @@
 #canvas #container{
     display: flex;
     flex-direction: row;
+    gap: 50px;
 }
 #canvas #container .template{
     background-color: #E5E5E5;
