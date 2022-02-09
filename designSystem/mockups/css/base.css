@@ -27,3 +27,28 @@ body {
     margin: 0;
     background-color: #DBBEA1;
 }
+h1 {
+    font-family: 'Augify';
+    font-weight: normal;
+    color: #1F345B;
+    font-size: 130px;
+    padding:0px;
+    margin:0px;
+}
+h2 {
+    font-family: Raleway, sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    color: #1F345B;
+    padding:0px;
+    margin:0px;
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 250px;
+    left: 50px;
+}
