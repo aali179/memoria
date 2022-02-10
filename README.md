@@ -18,6 +18,9 @@ A virtual multi-media scrapbook generator for treasured memories. Add images, so
 - Generates a collage page and saves to user's scrapbook
 - Supports user account creation and management (DB)
 
+## 🎨 Design System
+View the documentation of our Design System [here.](https://github.com/professor-forward/memoria/blob/f/deliverable-2/designSystem/README.md) 
+
 ## 🛠 Tools
 - **Client-side:** HTML, CSS/SASS, React
 - **Server-side:** Gin (Go)
