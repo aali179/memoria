@@ -3,8 +3,6 @@
 package main
 
 import (
-	"net/http"
-
 	"github.com/gin-gonic/gin"
 )
 
@@ -38,10 +36,6 @@ type Image struct {
 	ID int
 }
 
-func getMessage(c *gin.Context) {
-	c.IndentedJSON(http.StatusOK, "Hello World")
-}
-
 var router *gin.Engine
 
 func main() {
@@ -49,8 +43,8 @@ func main() {
 	// Set the router as the default one provided by Gin
 	router := gin.Default()
 
-	// Test route
-	router.GET("/test", getMessage)
+	// Initialize all routes
+	initializeRoutes(router)
 
 	// Start serving the application
 	router.Run()
