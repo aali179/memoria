@@ -1,0 +1,92 @@
+body {
+    background-color: #EDDFD0;
+}
+
+#dashboard{
+    margin:5%;
+}
+.tab {
+    overflow: hidden;
+}
+.tab button{
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1), 0px 0px 10px rgba(255, 158, 142, 0.4);
+    border: none;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5rem;
+    color: #1F345B;
+    height: 100px;
+    width: auto;
+    padding: 0px 20px 50px 20px;
+}
+.tab button.active-tab{
+    background-color: #DBBEA1;
+}
+.inactive-tab{
+    background-color: #E5E5E5;
+}
+.book-content, .create-content{
+    position: absolute;
+    background-color: #DBBEA1;
+    border-radius: 0px 10px 10px 10px;
+    z-index: 1000;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05);
+    margin-top: -50px;
+}
+.book-content{
+    width: 80%;
+    height: 500px;
+    padding: 30px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.create-content {
+    width: 80%;
+    height: auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tab-item{
+
+}
+.text {
+    font-family: 'Raleway', sans-serif;
+    font-weight: normal;
+    font-size: 1.5rem;
+}
+table {
+    border-spacing: 0px;
+    border-color: #E26D5A;
+    height: auto;
+}
+#book-title{
+    color: #1F345B;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    text-align: center;
+    padding: 0px;
+}
+.book {
+    width: 150px;
+    height: 220px;
+    background-color: #E26D5A;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1), 0px 0px 20px rgba(255, 158, 142, 0.4);
+}
+.add-icon{
+    position: relative;
+    top: 140px;
+    left: 85px;
+}
+#new-book{
+    width: 150px;
+    height: 220px;
+    background-color: #EDDFD0;
+    border-radius: 10px;
+    border-color: #E26D5A;
+    border-style: dashed;
+    border-width: 2px;
+    margin: 20px 20px 20px 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1), 0px 0px 20px rgba(255, 158, 142, 0.4);
+}
