@@ -6,6 +6,6 @@ import (
 
 type Song struct {
 	gorm.Model
-	SpotifyID string
-	PageID    uint `json:"page"`
+	SpotifyID string `json:"spotifyID"`
+	PageID    uint   `json:"page"`
 }
