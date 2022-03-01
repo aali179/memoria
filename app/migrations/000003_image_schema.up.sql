@@ -5,8 +5,8 @@ CREATE TABLE "public"."images" (
     "description" text,
     "created_at" timestamptz,
     "updated_at" timestamptz,
+    "file" text,
     "deleted_at" timestamptz,
-    "file" bytea,
     CONSTRAINT "images_pkey" PRIMARY KEY ("id")
 ) WITH (oids = false);
 
