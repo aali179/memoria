@@ -28,7 +28,7 @@ func Connect() error {
 	}
 
 	db = conn
-	db.Debug().AutoMigrate(&Scrapbook{}, &Page{}, &Image{}, &Song{}, &Map{})
+	//db.Debug().AutoMigrate(&Scrapbook{}, &Page{}, &Image{}, &Song{}, &Map{})
 
 	return nil
 }
