@@ -2,8 +2,10 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
+	"fmt"
 	"memoria/app/models"
+
+	"github.com/gin-gonic/gin"
 )
 
 var router *gin.Engine
@@ -13,7 +15,11 @@ func main() {
 	// Set the router as the default one provided by Gin
 	router := gin.Default()
 
-	models.Connect()
+	err := models.Connect()
+
+	if err != nil {
+		fmt.Println(err)
+	}
 	// Initialize all routes
 	initializeRoutes(router)
 
