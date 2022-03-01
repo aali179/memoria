@@ -19,9 +19,10 @@ type Song struct {
 	URL        string     `json:"url"`
 }
 
-func connect() (*spotify.Client, context.Context) {
+var ctx = context.Background()
+
+func connect() *spotify.Client {
 	godotenv.Load()
-	ctx := context.Background()
 
 	config := &clientcredentials.Config{
 		ClientID:     os.Getenv("SPOTIFY_CLIENT_ID"),
@@ -37,11 +38,11 @@ func connect() (*spotify.Client, context.Context) {
 	httpClient := spotifyauth.New().Client(ctx, token)
 
 	client := spotify.New(httpClient)
-	return client, ctx
+	return client
 }
 
 func SearchSong(song string) []Song {
-	client, ctx := connect()
+	client := connect()
 	res, err := client.Search(ctx, song, spotify.SearchTypeTrack)
 
 	if err != nil {
@@ -59,7 +60,7 @@ func SearchSong(song string) []Song {
 }
 
 func GetSongById(ID string) Song {
-	client, ctx := connect()
+	client := connect()
 	track, err := client.GetTrack(ctx, spotify.ID(ID))
 
 	if err != nil {

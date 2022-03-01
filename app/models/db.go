@@ -1,12 +1,12 @@
-
 package models
 
 import (
 	"fmt"
-	"gorm.io/gorm"
-	"gorm.io/driver/postgres"
-	"github.com/joho/godotenv"
 	"os"
+
+	"github.com/joho/godotenv"
+	"gorm.io/driver/postgres"
+	"gorm.io/gorm"
 )
 
 var db *gorm.DB
@@ -14,7 +14,6 @@ var db *gorm.DB
 func Connect() {
 
 	godotenv.Load()
-	
 	username := os.Getenv("DB_USER")
 	password := os.Getenv("DB_PASS")
 	name := os.Getenv("DB_NAME")
@@ -29,5 +28,15 @@ func Connect() {
 	}
 
 	db = conn
-	db.Debug().AutoMigrate(&Map{}, &Song{}, &Image{},&Scrapbook{},&Page{})
+	db.Debug().AutoMigrate(&Scrapbook{}, &Page{}, &Image{}, &Song{}, &Map{})
+}
+
+func GetPageById(id int) Page {
+	var page Page
+	db.Where("id = ?", id).First(&page)
+	return page
+}
+
+func CreatePage() {
+
 }

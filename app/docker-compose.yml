@@ -1,0 +1,29 @@
+services:
+  postgres:
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: memoria
+      POSTGRES_PASSWORD: testpassword
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+  app:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - 5000:5000
+    environment:
+    - DB_USER=postgres
+    - DB_PASS=testpassword
+    - DB_HOST=postgres
+    - DB_NAME=postgres
+    - PORT=5000
+    depends_on:
+      - postgres
