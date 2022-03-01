@@ -1,5 +1,9 @@
 let tabButtons = [document.querySelectorAll('.drop-down')]
 
+window.onload = function() {
+    showCanvasContent("images-btn")
+}
+
 // Toggle content when tabs are clicked
 function showCanvasContent(id) {  
     for (let i=0; i<tabButtons[0].length; i++){
