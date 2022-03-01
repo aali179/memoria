@@ -37,6 +37,15 @@ h3 {
     margin:0px;
 }
 
+h4 {
+    font-family: 'Raleway';
+    font-weight: bold;
+    color: #1F345B;
+    font-size: 14px;
+    text-align: center;
+    margin:0px;
+}
+
 .icons {
     background-color: #DBBEA1;
 }
@@ -89,6 +98,26 @@ h3 {
     width: 220px;
     position: relative;
 }
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    width:220px;
+    height: auto;
+    background-color: #E5E5E5;
+    padding: 15px 0px 15px 0px;
+    gap: 2px;
+}
+
+.text-options-container {
+    display: flex;
+    direction: row;
+    justify-content: left;
+    align-items: center;
+    gap: 10px;
+    margin: 0px 0px 0px 20px;
+}
+
 .search {
     display: flex;
     flex-direction: row;
@@ -181,20 +210,23 @@ h3 {
     left: 50%;
     top: 25%;
 }
-#top-bar #generate-btn{
+#generate-btn{
     height: 40px;
-    color: #1F345B;
+    background-color: #E26D5A;
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
     font-family: 'Raleway', sans-serif;
     font-size: 20px;
     text-align: center;
     position: relative;
     font-weight: bold;
-    text-align: center;
     display: flex;
     flex-direction: row;
     gap: 5px;
-    left: 75%;
-    top: 25%;
+    height: auto;
+    margin: 20px 20px 0px 0px;
+    left: 35px;
 }
 .text {
     color: #1F345B;
