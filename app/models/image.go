@@ -7,5 +7,5 @@ import (
 type Image struct {
 	gorm.Model
 	File []byte
-	Map  []Map
+	Map  []Map `json:"maps"`
 }

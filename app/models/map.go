@@ -6,7 +6,7 @@ import (
 
 type Map struct {
 	gorm.Model
-	Location string
-	ImageID  uint `json:"image"`
-	PageID   uint `json:"page"`
+	Location string `json:"location"`
+	ImageID  uint   `json:"image"`
+	PageID   uint   `json:"page"`
 }
