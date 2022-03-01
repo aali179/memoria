@@ -67,7 +67,6 @@ func GetSongById(ID string) Song {
 		fmt.Printf("something went wrong: %s", err)
 	}
 	song := Song{Name: track.Name, ID: track.ID, ArtistName: track.Artists[0].Name, URL: track.PreviewURL, AlbumCover: track.Album.Images[0].URL}
-
 	return song
 
 }
