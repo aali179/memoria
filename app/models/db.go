@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"os"
 
+	"memoria/app/utils"
+
 	"github.com/joho/godotenv"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -43,16 +45,14 @@ func GetPageById(id uint) (Page, error) {
 }
 
 func CreatePage(
-	imageOne Image,
-	imageTwo Image,
-	imageThree Image,
+	images []Image,
 	headingOne string,
 	headingTwo string,
 	headingThree string,
 	location Map,
 	song Song,
 	scrapbookID uint) (Page, error) {
-	page := Page{Images: []Image{imageOne, imageTwo, imageThree}, HeadingOne: headingOne, HeadingTwo: headingTwo, HeadingThree: headingThree, Map: location, Song: song, ScrapbookID: scrapbookID}
+	page := Page{Images: images, HeadingOne: headingOne, HeadingTwo: headingTwo, HeadingThree: headingThree, Map: location, Song: song, ScrapbookID: scrapbookID}
 	res := db.Create(&page)
 	if res.Error != nil {
 		return Page{}, res.Error
@@ -67,4 +67,13 @@ func CreateScrapbook(name string) (Scrapbook, error) {
 		return Scrapbook{}, res.Error
 	}
 	return scrapbook, nil
+}
+
+func CreateImage(file []byte) (Image, error) {
+	image := Image{File: utils.EncodeImage(file)}
+	res := db.Create(&image)
+	if res.Error != nil {
+		return Image{}, res.Error
+	}
+	return image, nil
 }
