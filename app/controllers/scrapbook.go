@@ -6,25 +6,20 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func CreatePage(c *gin.Context) models.Page {
-	//create image
-	/*form, _ := c.MultipartForm()
-	files := form.File["upload[]"]
-	mapImage := models.CreateImage(files["map[]"])
-	ioutil.ReadFile(files["map"].Filename)
-	imageOne := models.CreateImage([]byte(form["imageOne"]))
-	imageTwo := models.CreateImage([]byte(c.PostForm("imageTwo")))
-	imageThree := models.CreateImage([]byte(c.PostForm("imageThree")))
-
-	location := models.CreateMap(mapImage, form["location"])
-	song := models.CreateSong(form["spotifyID"])
-	models.CreatePage(imageOne, imageTwo, imageThree, form["headingOne"], form["headingTwo"], form["headingThree"], location, song)*/
-
-	newMap := models.Map{Location: "Mexico", ImageID: 1}
-	song := models.Song{SpotifyID: "41293819"}
-	return models.CreatePage(models.Image{File: []byte("testing")}, models.Image{File: []byte("testing")}, models.Image{File: []byte("testing")}, "Test", "Test 2", "Test 3", newMap, song, 1)
+type CreateRequest struct {
+	Name string `json:"name"`
 }
 
-func GetPage(id uint) models.Page {
-	return models.GetPageById(id)
+func CreateScrapbook(c *gin.Context) (models.Scrapbook, error) {
+	body := CreateRequest{}
+	if err := c.BindJSON(&body); err != nil {
+		return models.Scrapbook{}, err
+	} else {
+		res, dberr := models.CreateScrapbook(body.Name)
+		if dberr != nil {
+			return models.Scrapbook{}, dberr
+		}
+		return res, nil
+
+	}
 }
