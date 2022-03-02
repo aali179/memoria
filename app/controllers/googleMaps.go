@@ -5,6 +5,7 @@ import (
 	"context"
 	"image/png"
 	"memoria/app/utils"
+	"os"
 
 	"googlemaps.github.io/maps"
 )
@@ -16,7 +17,7 @@ type Map struct {
 
 // Setup maps client
 func connectMaps() (*maps.Client, error) {
-	client, err := maps.NewClient(maps.WithAPIKey("AIzaSyCzLhQYVButqP7cEq1Xn0VcaghrGovpolE"))
+	client, err := maps.NewClient(maps.WithAPIKey(os.Getenv("MAPS_KEY")))
 	if err != nil {
 		return nil, err
 	}
