@@ -3,6 +3,7 @@ package main
 
 import (
 	"fmt"
+	"memoria/app/controllers"
 	"memoria/app/models"
 
 	"github.com/gin-gonic/gin"
@@ -21,7 +22,7 @@ func main() {
 		fmt.Println(err)
 	}
 	// Initialize all routes
-	initializeRoutes(router)
+	controllers.InitializeRoutes(router)
 
 	// Start serving the application
 	router.Run()
