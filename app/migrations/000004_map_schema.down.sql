@@ -1,0 +1,2 @@
+DROP TABLE IF EXISTS "maps";
+DROP SEQUENCE IF EXISTS maps_id_seq;

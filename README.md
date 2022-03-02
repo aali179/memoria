@@ -22,8 +22,26 @@ A virtual multi-media scrapbook generator for treasured memories. Add images, so
 View the documentation of our Design System [here.](https://github.com/professor-forward/memoria/blob/f/deliverable-2/designSystem/README.md) 
 
 ## 🛠 Tools
-- **Client-side:** HTML, CSS/SASS, React
+- **Client-side:** HTML, CSS/SASS
 - **Server-side:** Gin (Go)
-- **Database:** MongoDB
-- **Internal API:** GraphQL
+- **Database:** Postgres
+- **Internal API:** REST
 - **External APIs:** Google Maps, Spotify
+
+
+## Installation & Deployment
+
+- Deployment will be done using docker (a requirement to run the application)
+- Navigate to the /app directory within the application
+- Run `docker-compose build`, this will generate an executable of the Go application
+- Run  `docker-compose up -d postgres`, this will start the postgres db in the background
+- Run `docker-compose up app migrate`
+   - this will start the go application at http://localhost:5000, along with a migration if needed
+
+
+## Migrations
+
+- the postgres DB has been versioned and migration files have been created and run through `go-migrate`
+- To run a db migration on its own `docker-compose up migrate`
+   - this will read the migrations/ file in the folder and build a new version of the system (if changes have been present)
+- As the migrations were not generated through GORM (typeORM used), a change to the model requires changes in both the appropriate files in the migrations/ folder and the structures in models/ folder

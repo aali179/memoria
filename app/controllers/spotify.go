@@ -2,7 +2,6 @@ package controllers
 
 import (
 	"context"
-	"fmt"
 	"os"
 
 	"github.com/joho/godotenv"
@@ -19,9 +18,10 @@ type Song struct {
 	URL        string     `json:"url"`
 }
 
-func connect() (*spotify.Client, context.Context) {
+var ctx = context.Background()
+
+func connect() (*spotify.Client, error) {
 	godotenv.Load()
-	ctx := context.Background()
 
 	config := &clientcredentials.Config{
 		ClientID:     os.Getenv("SPOTIFY_CLIENT_ID"),
@@ -31,21 +31,24 @@ func connect() (*spotify.Client, context.Context) {
 
 	token, err := config.Token(ctx)
 	if err != nil {
-		fmt.Printf("couldn't get token: %s", err)
+		return nil, err
 	}
 
 	httpClient := spotifyauth.New().Client(ctx, token)
 
 	client := spotify.New(httpClient)
-	return client, ctx
+	return client, nil
 }
 
-func SearchSong(song string) []Song {
-	client, ctx := connect()
+func SearchSong(song string) ([]Song, error) {
+	client, err := connect()
+	if err != nil {
+		return []Song{}, err
+	}
 	res, err := client.Search(ctx, song, spotify.SearchTypeTrack)
 
 	if err != nil {
-		fmt.Printf("something went wrong: %s", err)
+		return []Song{}, err
 	}
 	songs := []Song{}
 
@@ -55,18 +58,20 @@ func SearchSong(song string) []Song {
 			songs = append(songs, song)
 		}
 	}
-	return songs
+	return songs, nil
 }
 
-func GetSongById(ID string) Song {
-	client, ctx := connect()
+func GetSongById(ID string) (Song, error) {
+	client, err := connect()
+	if err != nil {
+		return Song{}, err
+	}
 	track, err := client.GetTrack(ctx, spotify.ID(ID))
 
 	if err != nil {
-		fmt.Printf("something went wrong: %s", err)
+		return Song{}, err
 	}
 	song := Song{Name: track.Name, ID: track.ID, ArtistName: track.Artists[0].Name, URL: track.PreviewURL, AlbumCover: track.Album.Images[0].URL}
-
-	return song
+	return song, nil
 
 }
