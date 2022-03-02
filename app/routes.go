@@ -77,6 +77,19 @@ func getSong(c *gin.Context) {
 	}
 	c.JSON(http.StatusOK, song)
 }
+
+func getMap(c *gin.Context) {
+	location := c.Query("location")
+	googleMap, err := controllers.GetMapByLocation(location)
+	if err != nil {
+		c.JSON(400, gin.H{
+			"error": err.Error(),
+		})
+		return
+	}
+	c.JSON(http.StatusOK, googleMap)
+}
+
 func initializeRoutes(router *gin.Engine) {
 	router.GET("/", getMessage)
 	router.GET("/search", searchSongs)
@@ -84,5 +97,6 @@ func initializeRoutes(router *gin.Engine) {
 	router.POST("/scrapbook", createScrapbook)
 	router.POST("/page", createPage)
 	router.GET("/page", getPage)
+	router.GET("/map", getMap)
 
 }
