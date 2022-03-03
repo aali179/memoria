@@ -10,12 +10,12 @@ type CreateRequest struct {
 	Name string `json:"name"`
 }
 
-func CreateScrapbook(c *gin.Context) (models.Scrapbook, error) {
+func (a *APIEnv) CreateScrapbook(c *gin.Context) (models.Scrapbook, error) {
 	body := CreateRequest{}
 	if err := c.BindJSON(&body); err != nil {
 		return models.Scrapbook{}, err
 	} else {
-		res, dberr := models.CreateScrapbook(body.Name)
+		res, dberr := models.CreateScrapbook(a.DB, body.Name)
 		if dberr != nil {
 			return models.Scrapbook{}, dberr
 		}
