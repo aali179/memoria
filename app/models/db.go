@@ -35,7 +35,11 @@ func Connect() error {
 	return nil
 }
 
-func GetPageById(id uint) (Page, error) {
+func GetDB() *gorm.DB {
+	return db
+}
+
+func GetPageById(db *gorm.DB, id uint) (Page, error) {
 	var page Page
 	res := db.Where("id = ?", id).First(&page)
 	if res.Error != nil {
@@ -44,7 +48,7 @@ func GetPageById(id uint) (Page, error) {
 	return page, nil
 }
 
-func CreatePage(
+func CreatePage(db *gorm.DB,
 	images []Image,
 	headingOne string,
 	headingTwo string,
@@ -60,7 +64,7 @@ func CreatePage(
 	return page, nil
 }
 
-func CreateScrapbook(name string) (Scrapbook, error) {
+func CreateScrapbook(db *gorm.DB, name string) (Scrapbook, error) {
 	scrapbook := Scrapbook{Name: name}
 	res := db.Create(&scrapbook)
 	if res.Error != nil {
@@ -69,7 +73,7 @@ func CreateScrapbook(name string) (Scrapbook, error) {
 	return scrapbook, nil
 }
 
-func CreateImage(file []byte) (Image, error) {
+func CreateImage(db *gorm.DB, file []byte) (Image, error) {
 	image := Image{File: utils.EncodeImage(file)}
 	res := db.Create(&image)
 	if res.Error != nil {

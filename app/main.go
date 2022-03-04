@@ -3,6 +3,7 @@ package main
 
 import (
 	"fmt"
+	"memoria/app/controllers"
 	"memoria/app/models"
 
 	"github.com/gin-gonic/gin"
@@ -11,19 +12,23 @@ import (
 var router *gin.Engine
 
 func main() {
+	Setup().Run()
+}
 
-	// Set the router as the default one provided by Gin
+//Setup routers to db
+func Setup() *gin.Engine {
 	router := gin.Default()
-
 	err := models.Connect()
+	api := &controllers.APIEnv{
+		DB: models.GetDB(),
+	}
 
 	if err != nil {
 		fmt.Println(err)
 	}
+
 	// Initialize all routes
-	initializeRoutes(router)
+	controllers.InitializeRoutes(router, api)
 
-	// Start serving the application
-	router.Run()
-
+	return router
 }

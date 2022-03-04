@@ -5,9 +5,15 @@ import (
 	"memoria/app/models"
 
 	"github.com/gin-gonic/gin"
+	"gorm.io/gorm"
 )
 
-func CreatePage(c *gin.Context) (models.Page, error) {
+// Remove dependency on DB object
+type APIEnv struct {
+	DB *gorm.DB
+}
+
+func (a *APIEnv) CreatePage(c *gin.Context) (models.Page, error) {
 	//create image
 	/*form, _ := c.MultipartForm()
 	files := form.File["upload[]"]
@@ -24,7 +30,7 @@ func CreatePage(c *gin.Context) (models.Page, error) {
 	if err != nil {
 		return models.Page{}, err
 	}
-	createdImage, err := models.CreateImage(mapImage)
+	createdImage, err := models.CreateImage(a.DB, mapImage)
 
 	if err != nil {
 		return models.Page{}, err
@@ -42,22 +48,22 @@ func CreatePage(c *gin.Context) (models.Page, error) {
 		if err != nil {
 			return models.Page{}, err
 		}
-		image, err := models.CreateImage(imgFile)
+		image, err := models.CreateImage(a.DB, imgFile)
 		if err != nil {
 			return models.Page{}, err
 		}
 		images = append(images, image)
 	}
 
-	res, err := models.CreatePage(images, "Test", "Test 2", "Test 3", newMap, song, 1)
+	res, err := models.CreatePage(a.DB, images, "Test", "Test 2", "Test 3", newMap, song, 1)
 	if err != nil {
 		return models.Page{}, err
 	}
 	return res, nil
 }
 
-func GetPage(id uint) (models.Page, error) {
-	res, err := models.GetPageById(id)
+func (a *APIEnv) GetPage(id uint) (models.Page, error) {
+	res, err := models.GetPageById(a.DB, id)
 	if err != nil {
 		return models.Page{}, err
 	}
