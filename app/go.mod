@@ -4,7 +4,6 @@ go 1.17
 
 require (
 	github.com/joho/godotenv v1.4.0
-	github.com/kr/pretty v0.2.0
 	github.com/zmb3/spotify/v2 v2.0.1
 	googlemaps.github.io/maps v1.3.2
 )
@@ -12,7 +11,6 @@ require (
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/google/uuid v1.1.1 // indirect
-	github.com/zmb3/spotify/v2 v2.0.1
 )
 
 require (
@@ -26,7 +24,6 @@ require (
 	github.com/jackc/pgx/v4 v4.14.1 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.4 // indirect
-	github.com/kr/text v0.1.0 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	go.opencensus.io v0.22.4 // indirect
 	golang.org/x/text v0.3.7 // indirect
@@ -35,15 +32,11 @@ require (
 )
 
 require (
-	github.com/Valiben/gin_unit_test v0.0.0-20181205064931-674aee46d090
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/gin-gonic/gin v1.7.7
-	golang.org/x/text v0.3.7 // indirect
 )
 
 require (
-	github.com/gin-contrib/sse v0.1.0 // indirect
-	github.com/gin-gonic/gin v1.7.7 // indirect
 	github.com/go-playground/locales v0.13.0 // indirect
 	github.com/go-playground/universal-translator v0.17.0 // indirect
 	github.com/go-playground/validator/v10 v10.4.1 // indirect
