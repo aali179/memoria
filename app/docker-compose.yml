@@ -1,0 +1,39 @@
+services:
+  postgres:
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: memoria
+      POSTGRES_PASSWORD: testpassword
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+  migrate:
+    image: migrate/migrate
+    volumes:
+     - ./migrations:/migrations
+    command: ["-path", "/migrations", "-database",  "postgres://postgres:testpassword@postgres:5432/postgres?sslmode=disable", "up"]
+    depends_on:
+      - postgres
+  app:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - 5000:5000
+    environment:
+    - DB_USER=postgres
+    - DB_PASS=testpassword
+    - DB_HOST=postgres
+    - DB_NAME=postgres
+    - PORT=5000
+    - SPOTIFY_CLIENT_SECRET=7ab2324dda904e07a1830f5ad4963680
+    - SPOTIFY_CLIENT_ID=11a49b46832346ae8d29aa2582857720
+    - MAPS_KEY=AIzaSyCzLhQYVButqP7cEq1Xn0VcaghrGovpolE
+    depends_on:
+      - postgres

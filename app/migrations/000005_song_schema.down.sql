@@ -1,0 +1,2 @@
+DROP TABLE IF EXISTS "songs";
+DROP SEQUENCE IF EXISTS songs_id_seq;
