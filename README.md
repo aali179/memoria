@@ -3,11 +3,8 @@
 A virtual multi-media scrapbook generator for treasured memories. Add images, songs, maps and more!
 
 ## 🤩 Team Members 
-
-|    Member            |         Student Number               |
-|--------------------- | ------------------------------------ |
-|Ruwani De Alwis       |        300057076                     |
-|Afrah Ali             |        300049798                     |
+Afrah Ali
+Ruwani De Alwis
 
 ## 🖌️ Features
 - Provides a collection of pre-designed scrapbook templates users can choose to use
